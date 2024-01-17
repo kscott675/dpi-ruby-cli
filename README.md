@@ -1,4 +1,4 @@
-# ruby-cli-template
+# Madam.AI Fortune Teller via CLI 
 
 - Preface: Hey guys, this is a game I created to simulate a fortune teller reading. Fun fact about me is that I used to read tarot cards for a living. Let me know if the reading resonates!
       email: kiowacbs@gmail.com
