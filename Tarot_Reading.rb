@@ -31,11 +31,11 @@ class Tarot_Reading
     sleep (1)
     options = {
       "1" => "You have pulled 'The Fool'.\nIt takes a 'fool' to chase their dreams in a world where practicality is praised.\nIf you can manage to put your feet on the ground while your head is in the clouds, you will be successful.",
-      "2" => "You have pulled 'The Magician'.\nDo not 'go with the flow' if it will take you somewhere you do not wish to go",
-      "3" => "You have pulled 'The High Priestess'.\nThe answers you seekare within. Do not ignore your gut instrict. Has it ever steered you wrong?",
+      "2" => "You have pulled 'The Magician'.\nDo not 'go with the flow' if it will take you somewhere you do not want to go.",
+      "3" => "You have pulled 'The High Priestess'.\nThe answers you seek are within. Do not ignore your gut instinct. Has it ever steered you wrong?",
       "4" => "You have pulled 'The Empress'.\nYou will benefit from taking a break.",
       "5" => "You have pulled 'The Sun'.\nAccept a positive opportunity that will be presented to you. \nIt will play a great deal in your happiness down the line.",
-      "6" => "You have pulled 'The Lovers'.\nRemember that you our feelings are valid and important too.",
+      "6" => "You have pulled 'The Lovers'.\nRemember that your feelings are valid and important too.",
       "default" => "Invalid option"
     }
 
