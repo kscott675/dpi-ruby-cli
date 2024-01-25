@@ -8,9 +8,9 @@ class Tarot_Reading
 
   def center_and_space_text(text)
     terminal_width = `tput cols`.to_i
-    padding_size = [(terminal_width - text.length) / 2, 0].max
-    padding = ' ' * padding_size
-    "#{padding}#{text}#{padding}"
+    padding_size = [((terminal_width) - text.length) / 2, 0].max
+    padding = "\n" + ' ' * (padding_size - 0.5)
+    "#{padding}#{text}#{padding}" + "\n"
   end
     
   def display_options_as_menu
@@ -21,7 +21,7 @@ class Tarot_Reading
       { name: 'Quit', value: :quit }
     ]
 
-    choice = prompt.select('Choose an option:', choices)
+    choice = prompt.select(center_and_space_text('Choose an option:'), choices)
   end
 
   def start_reading
@@ -38,6 +38,8 @@ class Tarot_Reading
         card = card_options.sample
         display_card(card)
 
+        sleep 5
+
         choice = display_options_as_menu
         display_selected_cards && game_outro if choice == :quit
 
@@ -47,7 +49,7 @@ class Tarot_Reading
   def game_outro
     puts center_and_space_text("Thank you for using Madam.AI!")
     puts center_and_space_text("Developed by: Kiowa Scott")
-    puts center_and_space_text("Namaste! ✨\n")
+    puts center_and_space_text("Namaste! ✨")
     exit
   end
   
@@ -59,10 +61,11 @@ class Tarot_Reading
 
   def display_selected_cards
     unless selected_cards.empty?
-      puts center_and_space_text("Cards you picked:\n")
+      puts center_and_space_text("Cards you picked:")
       selected_cards.each do |number, card|
-        puts center_and_space_text("#{card}\n")
+        puts center_and_space_text("#{card}")
     end
+    sleep 3
   end
 end
 end

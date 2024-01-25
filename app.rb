@@ -1,8 +1,16 @@
 begin
   require 'tty-prompt'
 rescue LoadError
-  puts "TTY::Prompt not installed. Please install it using: gem install tty-prompt"
-  exit
+  puts "TTY::Prompt not installed."
+  puts "It will be automatically installed using: gem install tty-prompt in 10 seconds"
+  puts "Press CTRL + C to cancel"
+  sleep 10
+  puts "Now installing... Enjoy your game!"
+  result = `gem install tty-prompt`
+  puts result
+  sleep 10
+rescue InputInterrupt
+  spread.game_outro
 end
 
 require_relative "tarot_reading"
@@ -17,10 +25,10 @@ require_relative "tarot_reading"
     end
 
     def start
+      begin
+      puts spread.center_and_space_text("Madam.AI: Command Line Psychic")
       print spread.center_and_space_text("Hi! What's your name?")
-      puts spread.center_and_space_text("")
-      puts spread.center_and_space_text("Press CTRL + Z to exit")
-      puts spread.center_and_space_text("")
+      puts spread.center_and_space_text("Press CTRL + C to exit")
 
       name = gets.chomp
 
@@ -33,7 +41,9 @@ require_relative "tarot_reading"
       @name = name.capitalize
 
       puts spread.center_and_space_text("Welcome to Madam.AI, #{@name}!")
-
+      sleep 2
+      puts spread.center_and_space_text("Press CTRL + C or 'Quit' to exit")
+      
         loop do
         choice = spread.display_options_as_menu
           case choice
@@ -43,6 +53,10 @@ require_relative "tarot_reading"
             spread.game_outro
           end
         end
+      rescue Interrupt
+        spread.display_selected_cards
+        spread.game_outro
+      end
     end
   end
 
