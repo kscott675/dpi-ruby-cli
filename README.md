@@ -8,8 +8,9 @@
 - When you're ready, here is what you'll do:
 
       -In the terminal, type "ruby app.rb"
-      -Pick a number between 1 and 6 when prompted. You will have 3 tries until the game ends.
-      -If you want to cancel, pick 0.
+      -Type your name
+      -Select "Pull a Card" to pull a card 
+      -Select "Quit" or press CTRL + Z to exit
       -Get your message! You will have a chance to pull another card as many times as you wish. 
 
 Have fun! :) 
