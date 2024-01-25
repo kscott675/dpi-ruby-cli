@@ -10,8 +10,9 @@
       -In the terminal, type "ruby app.rb"
       -Type your name
       -Select "Pull a Card" to pull a card 
+      -Get your message! You can continue to pull cards for as long as you like.
       -Select "Quit" or press CTRL + Z to exit
-      -Get your message! You will have a chance to pull another card as many times as you wish. 
+
 
 Have fun! :) 
 
