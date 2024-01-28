@@ -1,5 +1,5 @@
 begin
-  require 'tty-prompt'
+  require "tty-prompt"
 rescue LoadError
   puts "TTY::Prompt not installed."
   puts "It will be automatically installed using: gem install tty-prompt in 10 seconds"
